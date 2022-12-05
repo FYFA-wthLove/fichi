@@ -1,0 +1,43 @@
+// Use this file to overwrite the basic Bootstrap variables and add your own variables
+// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
+// Just copy a variable from src/sass/assets/bootstrap5/_variables.scss, paste it here and edit the value.
+
+
+$purple: #5533ff; // Thats a sample how you could change a BootStrap variable.
+$primary: $purple;  // Once we've changed the value, we'll also make it the primary brand color.
+$fa-li-width: calc(30em / 14) !default;
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+
+	@for $i from 2 through 9 {
+		.gallery-columns-#{$i} & {
+			max-width: calc(floor(percentage(calc(1 / $i)) * 100) / 100);
+		}
+	}
+}
+
+$font-family-base: 'Chivo', sans-serif;
+$font-family-asul: 'Asul', sans-serif;
+
+$grid-breakpoints: (
+		xs: 0,
+		sm: 415px,
+		md: 621px,
+		lg: 800px,
+		xl: 900px,
+		xxl: 1172px
+);
+
+$container-max-widths: (
+		sm: 444px,
+		md: 650px,
+		lg: 800px,
+		xl: 900px,
+		xxl: 1172px
+);
+
+
