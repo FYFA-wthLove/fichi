@@ -1,12 +1,10 @@
-//@import "theme/child_theme_variables";
 @import 'theme/child_theme_variables';
 @import "assets/bootstrap5/bootstrap";                             // <------- Loads Bootstrap4
 @import "assets/understrap/theme/understrap";  // <------- Loads the Understrap defaults. Just a few classes to incorporate BS in WP
-@import "assets/understrap/theme/woocommerce"; // <------- Loads WooCommerce style fixes. Comment out if you aren't using WooCommerce
-
 // Optional files - If you don´t use the corresponding scripts/fonts comment em out
 @import "assets/fontawesome/font-awesome";                           // <------- Font Awesome Icon font
 @import "assets/underscores";                            // <------- Underscores media styles
+
 
 // Any additional imported files //
 @import "theme/child_theme";                             // <------- Add your styles into this file
@@ -14,6 +12,9 @@
 @import "assets/understrap/theme/blocks";           // <-------- This adds Bootstrap styles to blocks.
 @import "assets/understrap/theme/contact-form7";    // <-------- Contact Form 7 - Bootstrap 4 support
 
-.tests {
-	color: blue;
-}
+
+@import "fichi/header";
+@import "fichi/footer";
+@import "fichi/buttons";
+@import "fichi/grid";
+@import "fichi/typography";
