@@ -1,0 +1,29 @@
+h1 {
+	color: $primary;
+	font-family: $font-family-asul;
+	font-weight: 700;
+	line-height: $line-height-h1;
+	letter-spacing: -0.6px;
+}
+
+h2 {
+	color: $primary;
+	font-family: $font-family-asul;
+	font-weight: 700;
+	line-height: $line-height-h2;
+	letter-spacing: -0.48px;
+}
+
+h4 {
+	color: $primary;
+	font-weight: 700;
+	letter-spacing: -0.18px;
+}
+
+p, a {
+	font-size: 16px;
+}
+
+a {
+	transition: all .4s;
+}

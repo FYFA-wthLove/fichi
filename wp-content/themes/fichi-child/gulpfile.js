@@ -25,7 +25,6 @@ gulp.task('cssmin', function () {
 
 gulp.task('compress-js', function() {
     gulp.src('./src/js/fichi/*.js')
-        .pipe(jshint())
         .pipe(jshint.reporter('fail'))
         .pipe(concat('theme.js'))
         .pipe(gulp.dest('js'))

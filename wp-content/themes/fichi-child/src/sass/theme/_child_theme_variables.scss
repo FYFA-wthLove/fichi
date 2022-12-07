@@ -2,17 +2,29 @@
 // To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
 // Just copy a variable from src/sass/assets/bootstrap5/_variables.scss, paste it here and edit the value.
 
+$light: #fff;
+$dark: #000;
+$primary: $dark;
+$green: #e6f5e2;
+$purple: #5c2a9d;
+$footer-bg: #f6e7da;
 
-$purple: #5533ff; // Thats a sample how you could change a BootStrap variable.
-$primary: $purple;  // Once we've changed the value, we'll also make it the primary brand color.
+$theme-colors: (
+		"primary": $dark,
+		"dark" : $dark,
+		"light" : $light,
+		"purple": $purple,
+		"green": $green,
+		"footer": $footer-bg
+);
+
 $fa-li-width: calc(30em / 14) !default;
 
-.gallery-item {
-	display: inline-block;
-	text-align: center;
-	vertical-align: top;
-	width: 100%;
+$full-width: 1920;
+$one-percent-width: calc($full-width / 100);
+$side-header-indents: calc((70 / $one-percent-width) * 1% );
 
+.gallery-item {
 	@for $i from 2 through 9 {
 		.gallery-columns-#{$i} & {
 			max-width: calc(floor(percentage(calc(1 / $i)) * 100) / 100);
@@ -25,19 +37,35 @@ $font-family-asul: 'Asul', sans-serif;
 
 $grid-breakpoints: (
 		xs: 0,
-		sm: 415px,
-		md: 621px,
-		lg: 800px,
+		sm: 444px,
+		md: 620px,
+		lg: 1085px,
+		xl: 1240px,
+		xxl: 1525px
+);
+
+$container-max-widths: (
+		sm: 560px,
+		md: 980px,
+		lg: 767px,
 		xl: 900px,
 		xxl: 1172px
 );
 
-$container-max-widths: (
-		sm: 444px,
-		md: 650px,
-		lg: 800px,
-		xl: 900px,
-		xxl: 1172px
-);
+$h1-font-size: 60px;
+$h2-font-size: 48px;
+$h3-font-size: 30px;
+$h4-font-size: 18px;
+$h5-font-size: 16px;
+$h6-font-size: 14px;
+
+$line-height-h1: 60px;
+$line-height-h2: 48px;
+
+
+$enable-responsive-font-sizes: true;
+$link-hover-color: $purple;
+$link-hover-decoration: none;
+$link-decoration: none;
 
 

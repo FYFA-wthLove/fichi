@@ -1,0 +1,94 @@
+.footer {
+	border-radius: 50px;
+	margin-bottom: 30px;
+	padding: 160px 20px;
+
+	@include media-breakpoint-down(lg) {
+		padding: 80px 20px;
+	}
+
+	@include media-breakpoint-down(md) {
+		padding: 40px 15px;
+	}
+
+	&__copyright {
+		@include media-breakpoint-down(xxl) {
+			margin-bottom: 30px;
+		}
+
+		p {
+			line-height: 26.4px;
+			letter-spacing: -0.14px;
+			margin-top: 18px;
+		}
+	}
+
+	&__menu {
+		padding-left: 106px;
+
+		@include media-breakpoint-down(xxl) {
+			padding-left: 0;
+
+		}
+
+		@include media-breakpoint-down(md) {
+			margin-bottom: 30px;
+		}
+
+		.footer-nav {
+			list-style: none;
+
+			.menu-item {
+				line-height: 36px;
+
+				a {
+					color: $purple;
+					letter-spacing: -0.16px;
+				}
+			}
+		}
+	}
+
+	&__email {
+		a {
+			line-height: 28px;
+			letter-spacing: -0.3px;
+		}
+	}
+
+	&__address {
+		p {
+			line-height: 24px;
+			letter-spacing: -0.16px;
+		}
+	}
+
+	&__phone {
+		a {
+			line-height: 26.4px;
+			letter-spacing: -0.16px;
+		}
+	}
+
+	&__socials {
+		list-style: none;
+		gap: 31px;
+
+		@include media-breakpoint-down(lg) {
+			gap: 15px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			margin-top: 30px;
+		}
+
+		a {
+			padding: 17px;
+			border-radius: 50%;
+
+			&:hover {
+				background-color: darken($light, 15%) !important;
+			}
+		}
+	}
+}
