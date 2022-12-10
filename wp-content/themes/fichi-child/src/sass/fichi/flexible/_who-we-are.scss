@@ -1,0 +1,54 @@
+.who-we-are {
+	padding: 140px 0;
+
+	@include media-breakpoint-down(lg) {
+		padding: 90px 0;
+	}
+
+	&__image {
+		@include media-breakpoint-down(lg) {
+			max-width: 300px;
+			margin: 30px auto 0 auto;
+		}
+	}
+
+	&__name {
+		margin-bottom: 18px;
+		padding-top: 60px;
+
+		@include media-breakpoint-down(xl) {
+			padding-top: 0;
+		}
+	}
+
+	&__title {
+		margin-bottom: 30px;
+	}
+
+	&__description {
+		margin-bottom: 32px;
+		p {
+			line-height: 22px;
+			letter-spacing: -0.16px;
+		}
+	}
+
+	&__trusted-thound {
+		&__text {
+			max-width: 167px;
+			p {
+				line-height: 18px;
+				letter-spacing: -0.14px;
+			}
+		}
+
+		&__icons {
+			list-style: none;
+			gap: 35px;
+
+			@include media-breakpoint-down(sm) {
+				gap: 10px;
+			}
+		}
+	}
+}
