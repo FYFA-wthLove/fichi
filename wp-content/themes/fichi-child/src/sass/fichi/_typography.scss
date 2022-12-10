@@ -16,12 +16,23 @@ h2 {
 	font-weight: 700;
 	line-height: $line-height-h2;
 	letter-spacing: -0.48px;
+
+	@include media-breakpoint-down(md) {
+		line-height: 40px;
+	}
 }
 
 h4 {
 	color: $primary;
 	font-weight: 700;
 	letter-spacing: -0.18px;
+}
+
+h6 {
+	font-weight: 700;
+	color: $purple;
+	line-height: normal;
+	letter-spacing: -0.14px;
 }
 
 p, a {

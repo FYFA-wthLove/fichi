@@ -53,3 +53,15 @@
 .mb-5 {
 	margin-bottom: 35px !important;
 }
+
+.mb-10 {
+	margin-bottom: 240px !important;
+
+	@include media-breakpoint-down(xxl) {
+		margin-bottom: 60px !important;
+	}
+
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 30px !important;
+	}
+}

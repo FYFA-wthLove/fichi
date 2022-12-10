@@ -20,6 +20,10 @@ get_header();
 			<!--	Hero Home-->
 			<?php get_template_part('inc/flexible-sections/hero-home'); ?>
 		<?php endif; ?>
+		<?php if ( get_row_layout() == 'who_we_are' ): ?>
+            <!--	Who We Are-->
+			<?php get_template_part('inc/flexible-sections/who-we-are'); ?>
+		<?php endif; ?>
 	<?php endwhile; ?>
 <?php endif; ?>
 
