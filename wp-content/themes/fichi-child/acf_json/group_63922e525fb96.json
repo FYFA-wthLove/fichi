@@ -1,0 +1,52 @@
+{
+    "key": "group_63922e525fb96",
+    "title": "Fichi Flexible",
+    "fields": [
+        {
+            "key": "field_63922e6997f91",
+            "label": "Fichi Flexible",
+            "name": "fichi_flexible",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_63922e9b8ea3d": {
+                    "key": "layout_63922e9b8ea3d",
+                    "name": "",
+                    "label": "",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Row",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "fichi-flexible.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1670524833
+}

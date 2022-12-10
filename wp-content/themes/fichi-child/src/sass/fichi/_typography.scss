@@ -4,6 +4,10 @@ h1 {
 	font-weight: 700;
 	line-height: $line-height-h1;
 	letter-spacing: -0.6px;
+
+	@include media-breakpoint-down(md) {
+		line-height: 44px;
+	}
 }
 
 h2 {

@@ -11,3 +11,17 @@
 		color: $light;
 	}
 }
+
+.btn-purple {
+	line-height: 48px;
+	letter-spacing: -0.16px;
+	padding: 16px 36px;
+	border-radius: 19px;
+	background-color: $purple;
+	transition: all .4s;
+
+	&:hover {
+		background-color: $green;
+		color: $dark;
+	}
+}

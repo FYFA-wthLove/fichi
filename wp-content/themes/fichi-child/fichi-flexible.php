@@ -1,0 +1,27 @@
+<?php
+/**
+ * Template Name: Fichi Flexible
+ *
+ * Template for displaying fichi templates.
+ *
+ * @package Understrap
+ */
+
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+get_header();
+
+?>
+
+<?php if ( have_rows( 'fichi_flexible' ) ): ?>
+	<?php while ( have_rows( 'fichi_flexible' ) ): the_row(); ?>
+		<?php if ( get_row_layout() == 'hero_home' ): ?>
+			<!--	Hero Home-->
+			<?php get_template_part('inc/flexible-sections/hero-home'); ?>
+		<?php endif; ?>
+	<?php endwhile; ?>
+<?php endif; ?>
+
+<?php
+get_footer();

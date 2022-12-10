@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<div class="wrapper footer bg-footer" id="wrapper-footer">
+<div class="wrapper footer bg-footer position-relative" id="wrapper-footer">
 
 	<div class="<?php echo esc_attr( $container ); ?>">
 
