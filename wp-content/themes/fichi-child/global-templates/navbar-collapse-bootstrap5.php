@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<nav id="main-nav" class="navbar navbar-expand-lg navbar-dark pt-5" aria-labelledby="main-nav-label">
+<nav id="main-nav" class="navbar navbar-expand-lg navbar-dark" aria-labelledby="main-nav-label">
 
 	<h2 id="main-nav-label" class="screen-reader-text">
 		<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
@@ -51,11 +51,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 			data-bs-target="#navbarNavDropdown"
 			aria-controls="navbarNavDropdown"
 			aria-expanded="false"
-			aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>"
-		>
-<!--			<span class="navbar-toggler-icon"></span>-->
-
-            <div class="animated-icon"><span></span><span></span><span></span></div>-->
+			aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
+            <div class="animated-icon"><span></span><span></span><span></span></div>
 		</button>
 
 		<!-- The WordPress Menu goes here -->

@@ -96,6 +96,7 @@ add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_co
 function fichi_img_size_setup() {
 	add_image_size('custom_logo', 67, 28, true);
 	add_image_size('footer_logo', 171, 71, true);
+	add_image_size('hero-image', 867, 1076, true);
 }
 add_action( 'after_setup_theme', 'fichi_img_size_setup' );
 
@@ -124,3 +125,11 @@ if (function_exists('acf_add_options_page')) {
 
 }
 
+/*
+ * Save acf fields settings to local folder
+*/
+add_filter('acf/settings/save_json', 'theme_acf_json_save');
+function theme_acf_json_save ($path) {
+	$path = get_stylesheet_directory() . '/acf_json';
+	return $path;
+}

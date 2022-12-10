@@ -1,0 +1,64 @@
+.hero-home {
+	padding-top: 159px;
+	padding-bottom: 80px;
+
+	@include media-breakpoint-down(xl) {
+		padding-top: 80px;
+	}
+
+	@include media-breakpoint-down(md) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+	&__title {
+		margin-bottom: 27px;
+
+		@include media-breakpoint-down(lg) {
+			margin-bottom: 25px;
+		}
+	}
+
+	&__description {
+		margin-bottom: 57px;
+
+		@include media-breakpoint-down(lg) {
+			margin-bottom: 25px;
+		}
+
+		p {
+			line-height: 24px;
+			letter-spacing: -0.18px;
+		}
+	}
+
+	&__buttons {
+		gap: 30px;
+	}
+
+	&__image {
+		position: absolute;
+		top: -336px;
+		right: 181px;
+
+		@media (max-width: 1780px) {
+			right: 80px;
+		}
+
+		@include media-breakpoint-down(xxl) {
+			top: -165px;
+			right: 70px;
+			max-width: 600px;
+		}
+
+		@include media-breakpoint-down(xl) {
+			max-width: 100%;
+			position: initial;
+		}
+
+		@include media-breakpoint-down(lg) {
+			width: 300px;
+			margin: 25px auto 0 auto;
+		}
+	}
+}
