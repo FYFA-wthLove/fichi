@@ -98,6 +98,7 @@ function fichi_img_size_setup() {
 	add_image_size('footer_logo', 171, 71, true);
 	add_image_size('hero-image', 867, 1076, true);
 	add_image_size('who_image', 603, 528, true);
+	add_image_size('mission_icon', 111, 81, true);
 }
 add_action( 'after_setup_theme', 'fichi_img_size_setup' );
 
