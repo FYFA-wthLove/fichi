@@ -50,7 +50,7 @@ $container = get_theme_mod( 'understrap_container_type' );
             <div class="col-xxl-6 col-md-9 pr-0">
                 <div class="d-flex justify-content-lg-between justify-content-md-evenly justify-content-around flex-sm-row flex-column">
                     <div class="text-sm-start text-center">
-                        <h4 class="mb-5 lh-16"><?php echo __('Stay Connected', 'fichi-child'); ?></h4>
+                        <h4 class="mb-5 lh-16 text-dark"><?php echo __('Stay Connected', 'fichi-child'); ?></h4>
 
                         <?php if( $footer_email = get_field('footer_email', 'option') ): ?>
                             <div class="footer__email mb-4">
