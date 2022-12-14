@@ -32,6 +32,15 @@ body {
 	&__sidebar-socials {
 		left: $side-header-indents;
 		top: 791px;
+		
+		@media (max-height: 900px) {
+			top: 450px;
+		}
+
+		@media (max-height: 600px) {
+			top: 200px;
+		}
+
 		ul {
 			list-style: none;
 			gap: 10px;
