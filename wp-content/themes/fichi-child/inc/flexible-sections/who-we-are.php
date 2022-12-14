@@ -1,5 +1,6 @@
 <section class="who-we-are">
 	<div class="container">
+
 		<div class="row align-items-xl-start align-items-center flex-lg-row flex-column-reverse">
 			<div class="col-xxl-7 col-xl-6 col-lg-5 col-12">
 				<?php if( $who_image = get_sub_field('who_image') ): ?>

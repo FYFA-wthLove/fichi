@@ -1,7 +1,7 @@
 <section class="hero-home position-relative">
 	<div class="container">
 		<div class="row align-items-center mb-10">
-			<div class="col-xxl-4 col-xl-5 col-lg-6 col-12 z-index-1">
+			<div class="col-xxl-4 col-xl-5 col-lg-6 col-12 index-1">
 				<?php if( $hero_home_title = get_sub_field('hero_home_title') ): ?>
 					<div class="hero-home__title text-lg-start text-center">
 						<h1 class="mb-0"><?php echo $hero_home_title; ?></h1>

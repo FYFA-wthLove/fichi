@@ -99,6 +99,7 @@ function fichi_img_size_setup() {
 	add_image_size('hero-image', 867, 1076, true);
 	add_image_size('who_image', 603, 528, true);
 	add_image_size('mission_icon', 111, 81, true);
+	add_image_size('post-thm', '', 720, true);
 }
 add_action( 'after_setup_theme', 'fichi_img_size_setup' );
 
@@ -135,3 +136,147 @@ function theme_acf_json_save ($path) {
 	$path = get_stylesheet_directory() . '/acf_json';
 	return $path;
 }
+
+add_action('init', 'work_post_type');
+function work_post_type () {
+	register_taxonomy(
+		'work_category',
+		'work',
+		array(
+			'hierarchical'  => true,
+			'label'         => __( 'Work Categories'),
+			'singular_name' => __( 'Work Category' ),
+			'query_var'     => true,
+			'show_in_rest'  => true,
+			'rewrite' => array( 'slug' => 'work_category' )
+		));
+
+	$snippet_pt_args = array(
+		'labels' => array(
+			'name' => 'Work',
+			'singular_name' => 'Best Work',
+		),
+		'taxonomies'          => array('work_category'),
+		'label'               => __( 'work' ),
+		'description'         => __( 'List of Work' ),
+		'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+		'hierarchical'        => true,
+		'public'              => true,
+		'publicly_queryable'  => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 5,
+		'menu_icon'           => 'dashicons-list-view',
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'show_in_rest'        => true,
+		'rewrite' => array( 'slug' => 'work' ),
+		'can_export'          => true,
+		'has_category'         => true,
+	);
+	register_post_type( 'work', $snippet_pt_args);
+}
+
+function add_breadcrumb_shortcode() {
+	$breadcrumb = '';
+
+	if ( function_exists( 'yoast_breadcrumb' ) ) {
+		$breadcrumb = yoast_breadcrumb( '<div class="fichi-breadcrumbs"><p id="breadcrumbs" class="mb-0">', '</p></div>' );
+	}
+	return $breadcrumb;
+}
+add_shortcode('breadcrumb', 'add_breadcrumb_shortcode');
+
+// Enqueue Ajax Load More
+function fichi_load_more_scripts() {
+	global $wp_query;
+	wp_register_script( 'fichi_loadmore', get_stylesheet_directory_uri() . '/assets/js/loadmore.js', array('jquery') );
+	wp_localize_script( 'fichi_loadmore', 'fichi_loadmore_params', array(
+		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
+		'posts' => json_encode( $wp_query->query_vars ),
+		'current_page' => $wp_query->query_vars['paged'] ? $wp_query->query_vars['paged'] : 1,
+		'max_page' => $wp_query->max_num_pages
+	) );
+
+	wp_enqueue_script( 'fichi_loadmore' );
+}
+add_action( 'wp_enqueue_scripts', 'fichi_load_more_scripts' );
+
+function fichi_loadmore_ajax_handler(){
+
+	$params = json_decode( stripslashes( $_POST['query'] ), true );
+	$params['paged'] = $_POST['page'] + 1;
+	$params['post_status'] = 'publish';
+	$params['order'] = 'ASC';
+	$params['orderby'] = 'date';
+
+	query_posts( $params );
+
+	if( have_posts() ) :
+		while( have_posts() ): the_post();
+			get_template_part( 'loop-templates/content', get_post_format() );
+		endwhile;
+	endif;
+	die;
+}
+add_action('wp_ajax_loadmore', 'fichi_loadmore_ajax_handler');
+add_action('wp_ajax_nopriv_loadmore', 'fichi_loadmore_ajax_handler');
+
+function fichi_ajax_filter() {
+	$catSlug = $_POST['category'];
+
+	if( $catSlug == '') {
+		$params = array(
+			'post_type' => 'work',
+			'orderby' => 'date',
+			'order' => 'ASC',
+		);
+	} else {
+		$params = array(
+			'post_type' => 'work',
+			'orderby' => 'date',
+			'order' => 'ASC',
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'work_category',
+					'field' => 'slug',
+					'terms' => $catSlug
+				)
+			),
+		);
+	}
+
+	query_posts( $params );
+
+	global $wp_query;
+
+	if( have_posts() ) :
+		ob_start();
+		while( have_posts() ): the_post();
+			get_template_part( 'loop-templates/content', get_post_format() );
+		endwhile;
+		$posts_html = ob_get_contents();
+		ob_end_clean();
+	endif;
+
+	echo json_encode( array(
+		'posts' => json_encode( $wp_query->query_vars ),
+		'max_page' => $wp_query->max_num_pages,
+		'found_posts' => $wp_query->found_posts,
+		'content' => $posts_html
+	) );
+	die();
+}
+
+add_action('wp_ajax_fichi_filter', 'fichi_ajax_filter');
+add_action('wp_ajax_nopriv_fichi_filter', 'fichi_ajax_filter');
+
+// Remove prefix from Archive Title
+add_filter('get_the_archive_title', function ($title) {
+	if (is_post_type_archive()) {
+		$title = post_type_archive_title('Best ', false);
+	}
+	return $title;
+});
