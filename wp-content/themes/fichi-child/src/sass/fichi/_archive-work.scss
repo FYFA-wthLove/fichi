@@ -24,6 +24,10 @@
 
 	&__fichi-list {
 		margin-top: 94px;
+
+		@include media-breakpoint-down(lg) {
+			margin-top: 30px;
+		}
 	}
 
 	&__list-item {
@@ -92,6 +96,38 @@
 					object-position: left;
 				}
 			}
+		}
+	}
+}
+
+.work-obj {
+	padding-top: 42px;
+	padding-bottom: 60px;
+
+	.work__list-item {
+		align-items: start !important;
+		padding-top: 106px;
+
+		@include media-breakpoint-down(xl) {
+			padding-top: 30px;
+		}
+	}
+
+	&__image {
+		bottom: -80px;
+		left: -31px;
+
+		@include media-breakpoint-down(xl) {
+			bottom: -30px;
+			left: 240px;
+			width: 200px;
+			height: auto;
+		}
+
+		@include media-breakpoint-down(md) {
+			bottom: -50px;
+			width: 100px;
+			left: 0;
 		}
 	}
 }
