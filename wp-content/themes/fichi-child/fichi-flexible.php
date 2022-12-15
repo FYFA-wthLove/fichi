@@ -30,6 +30,11 @@ get_header();
             <!--	Our Mission-->
 			<?php get_template_part('inc/flexible-sections/our-mission'); ?>
 		<?php endif; ?>
+
+		<?php if ( get_row_layout() == 'work_object' ): ?>
+            <!--	Our Mission-->
+			<?php get_template_part('inc/flexible-sections/work-obj'); ?>
+		<?php endif; ?>
 	<?php endwhile; ?>
 <?php endif; ?>
 
