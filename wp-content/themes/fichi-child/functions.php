@@ -101,6 +101,7 @@ function fichi_img_size_setup() {
 	add_image_size('mission_icon', 111, 81, true);
 	add_image_size('post-thm', '', 720, true);
 	add_image_size('obj-img', 284, 258, true);
+	add_image_size('services-loop-img', 100, 100, true);
 }
 add_action( 'after_setup_theme', 'fichi_img_size_setup' );
 

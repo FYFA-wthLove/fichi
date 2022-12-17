@@ -32,8 +32,13 @@ get_header();
 		<?php endif; ?>
 
 		<?php if ( get_row_layout() == 'work_object' ): ?>
-            <!--	Our Mission-->
+            <!--	Work Object-->
 			<?php get_template_part('inc/flexible-sections/work-obj'); ?>
+		<?php endif; ?>
+
+		<?php if ( get_row_layout() == 'amazing_services' ): ?>
+            <!--	Amazing Services-->
+			<?php get_template_part('inc/flexible-sections/amazing-services'); ?>
 		<?php endif; ?>
 	<?php endwhile; ?>
 <?php endif; ?>
