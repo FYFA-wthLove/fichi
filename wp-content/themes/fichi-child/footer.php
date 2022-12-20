@@ -19,7 +19,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<div class="row">
 
-			<div class="col-xxl-3 col-12 px-0">
+			<div class="col-xxl-3 col-12">
                 <?php if( $footer_logo = get_field('footer_logo', 'option') ): ?>
                     <div class="footer__logo text-xxl-start text-center">
 	                    <?php echo wp_get_attachment_image( $footer_logo, 'footer_logo' ); ?>
@@ -33,7 +33,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                 <?php endif; ?>
             </div>
 
-            <div class="col-md-3 col-12 px-0">
+            <div class="col-md-3 col-12">
 
                 <div class="footer__menu">
                     <div class="text-lg-start text-center">
@@ -47,7 +47,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                 </div>
             </div>
 
-            <div class="col-xxl-6 col-md-9 pr-0">
+            <div class="col-xxl-6 col-md-9">
                 <div class="d-flex justify-content-lg-between justify-content-md-evenly justify-content-around flex-sm-row flex-column">
                     <div class="text-sm-start text-center">
                         <h4 class="mb-5 lh-16 text-dark"><?php echo __('Stay Connected', 'fichi-child'); ?></h4>

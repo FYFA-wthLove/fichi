@@ -104,6 +104,10 @@
 	padding-top: 42px;
 	padding-bottom: 60px;
 
+	@include media-breakpoint-down(md) {
+		padding: 30px 0;
+	}
+
 	.work__list-item {
 		align-items: start !important;
 		padding-top: 106px;
