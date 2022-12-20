@@ -42,7 +42,6 @@ $container = get_theme_mod( 'understrap_container_type' );
     </div>
 
 	<?php get_template_part( 'global-templates/navbar-branding' ); ?>
-<!--    navbar__container-->
 	<div class="<?php echo esc_attr( $container ); ?> px-0">
 		<button
 			class="navbar-toggler hamburger-button collapsed"

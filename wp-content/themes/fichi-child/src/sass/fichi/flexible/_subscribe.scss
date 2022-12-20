@@ -1,0 +1,100 @@
+.subscribe {
+	padding-top: 47px;
+	padding-bottom: 141px;
+
+	@include media-breakpoint-down(lg) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+	&__description {
+		padding-top: 19px;
+		p {
+			line-height: 24px;
+			letter-spacing: -0.18px;
+		}
+	}
+
+	&__form {
+		padding-top: 34px;
+
+		.wpcf7 {
+			max-width: 570px;
+		}
+
+		.wpcf7 .wpcf7-form p {
+			margin-bottom: 0;
+		}
+
+		.wpcf7-form {
+			display: flex;
+			position: relative;
+
+			@include media-breakpoint-down(md) {
+				flex-direction: column;
+			}
+		}
+
+		.wpcf7 input[type=email] {
+			min-height: 58px;
+			background-color: #f7f7f7;
+			border-radius: 20px;
+			border: 0;
+			padding-left: 31px;
+
+			@include media-breakpoint-down(lg) {
+				padding-left: 15px;
+				font-size: 14px;
+			}
+		}
+
+		.wpcf7 input[type=email]:focus {
+			box-shadow: none;
+		}
+
+		.wpcf7 input[type=submit] {
+			min-height: 50px;
+			border: 0;
+			border-radius: 19px;
+			background-color: $purple;
+			color: #fff;
+			letter-spacing: -0.16px;
+			padding: 0 43px;
+
+			@include media-breakpoint-down(lg) {
+				padding: 0 15px;
+				font-size: 14px;
+			}
+		}
+
+		.wpcf7 input[type=submit]:hover {
+			background-color: $green;
+			color: $dark;
+		}
+
+		.wpcf7-spinner {
+			display: none;
+		}
+
+		.subscribe-email {
+			width: 100%;
+			p {
+				width: 100%;
+			}
+		}
+
+		.subscribe-submit {
+			position: absolute;
+			width: auto;
+			right: 3px;
+			top: 50%;
+			transform: translate(0, -50%);
+
+			@include media-breakpoint-down(md) {
+				position: initial;
+				transform: translate(0, 0);
+				margin-top: 10px;
+			}
+		}
+	}
+}

@@ -40,6 +40,11 @@ get_header();
             <!--	Amazing Services-->
 			<?php get_template_part('inc/flexible-sections/amazing-services'); ?>
 		<?php endif; ?>
+
+		<?php if ( get_row_layout() == 'subscribe' ): ?>
+            <!--	Subscribe-->
+			<?php get_template_part('inc/flexible-sections/subscribe'); ?>
+		<?php endif; ?>
 	<?php endwhile; ?>
 <?php endif; ?>
 
