@@ -45,6 +45,11 @@ get_header();
             <!--	Subscribe-->
 			<?php get_template_part('inc/flexible-sections/subscribe'); ?>
 		<?php endif; ?>
+
+		<?php if ( get_row_layout() == 'about_hero' ): ?>
+            <!--	About Hero-->
+			<?php get_template_part('inc/flexible-sections/about-hero'); ?>
+		<?php endif; ?>
 	<?php endwhile; ?>
 <?php endif; ?>
 
