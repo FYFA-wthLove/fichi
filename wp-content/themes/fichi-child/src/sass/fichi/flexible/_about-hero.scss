@@ -3,6 +3,12 @@
 	background-position-y: 69px;
 	background-position-x: 114px;
 	padding-bottom: 305px;
+
+	@include media-breakpoint-down(lg) {
+		padding-bottom: 60px;
+	}
+
+
 	&__image {
 		top: -214px;
 		right: 284px;

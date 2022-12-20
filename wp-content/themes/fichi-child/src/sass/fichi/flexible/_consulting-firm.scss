@@ -1,0 +1,42 @@
+.consulting-firm {
+	padding-top: 31px;
+	padding-bottom: 50px;
+
+	@include media-breakpoint-down(lg) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+	&__description {
+		padding-bottom: 41px;
+		p {
+			line-height: 22px;
+			letter-spacing: -0.16px;
+			margin-bottom: 0;
+		}
+	}
+
+	&__trusted-thound {
+		&__text {
+			max-width: 167px;
+			p {
+				line-height: 18px;
+				letter-spacing: -0.14px;
+			}
+		}
+
+		&__icons {
+			list-style: none;
+			gap: 35px;
+			padding-right: 102px;
+
+			@include media-breakpoint-down(xxl) {
+				padding-right: 0;
+			}
+
+			@include media-breakpoint-down(sm) {
+				gap: 10px;
+			}
+		}
+	}
+}
