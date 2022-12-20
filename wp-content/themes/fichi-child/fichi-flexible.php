@@ -50,6 +50,11 @@ get_header();
             <!--	About Hero-->
 			<?php get_template_part('inc/flexible-sections/about-hero'); ?>
 		<?php endif; ?>
+
+		<?php if ( get_row_layout() == 'consulting_firm' ): ?>
+            <!--	Consulting Firm-->
+			<?php get_template_part('inc/flexible-sections/consulting-firm'); ?>
+		<?php endif; ?>
 	<?php endwhile; ?>
 <?php endif; ?>
 
