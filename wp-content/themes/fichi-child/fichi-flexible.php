@@ -60,6 +60,11 @@ get_header();
             <!--	Loog Forward-->
 			<?php get_template_part('inc/flexible-sections/loog-forward'); ?>
 		<?php endif; ?>
+
+        <?php if ( get_row_layout() == 'big_clients' ): ?>
+            <!--	Big Clients-->
+			<?php get_template_part('inc/flexible-sections/big-clients'); ?>
+		<?php endif; ?>
 	<?php endwhile; ?>
 <?php endif; ?>
 
