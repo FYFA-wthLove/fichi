@@ -55,6 +55,11 @@ get_header();
             <!--	Consulting Firm-->
 			<?php get_template_part('inc/flexible-sections/consulting-firm'); ?>
 		<?php endif; ?>
+
+        <?php if ( get_row_layout() == 'loog_forward' ): ?>
+            <!--	Loog Forward-->
+			<?php get_template_part('inc/flexible-sections/loog-forward'); ?>
+		<?php endif; ?>
 	<?php endwhile; ?>
 <?php endif; ?>
 
