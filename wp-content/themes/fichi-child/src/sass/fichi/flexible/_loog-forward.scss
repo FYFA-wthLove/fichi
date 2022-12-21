@@ -1,0 +1,68 @@
+.loog-forward {
+	padding-top: 71px;
+	padding-bottom: 70px;
+	background-repeat: no-repeat;
+	background-position-x: 66px;
+	background-position-y: 318px;
+
+	@include media-breakpoint-down(xxl) {
+		background-position-x: center;
+	}
+
+	@include media-breakpoint-down(lg) {
+		padding-top: 35px;
+		padding-bottom: 35px;
+	}
+
+	&__image {
+		@include media-breakpoint-down(xxl) {
+			max-width: 400px;
+		}
+
+		@include media-breakpoint-down(xl) {
+			max-width: 300px;
+		}
+
+		@include media-breakpoint-down(lg) {
+			padding-bottom: 15px;
+		}
+	}
+
+	&__description {
+		padding-top: 30px;
+		padding-bottom: 45px;
+
+		p {
+			line-height: 22px;
+			letter-spacing: -0.16px;
+		}
+	}
+
+	&__button {
+		a {
+			padding: 16px 47px;
+		}
+	}
+
+	&__drawing {
+		padding-right: 30px;
+		margin-top: -18px;
+
+		@include media-breakpoint-down(xxl) {
+			margin-top: 0;
+		}
+	}
+
+	&__list-text {
+		padding-left: 32px;
+
+		@include media-breakpoint-down(lg) {
+			padding-left: 15px;
+		}
+
+		p {
+			line-height: 22px;
+			letter-spacing: -0.16px;
+		}
+	}
+}
