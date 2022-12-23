@@ -48,6 +48,11 @@ function theme_enqueue_styles() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	wp_enqueue_script( 'map-js', get_stylesheet_directory_uri() . '/assets/js/map.js', array(), $the_theme->get( 'Version' ), true );
+	// Map marker Icon
+	$google_map_marker_path = array( 'templateMarker' => get_stylesheet_directory_uri() . '/assets/img/map-marker-icon.svg' );
+	wp_localize_script( 'map-js', 'object_marker', $google_map_marker_path );
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
@@ -105,6 +110,7 @@ function fichi_img_size_setup() {
 	add_image_size('about-hero-img', 708, 644, true);
 	add_image_size('loog-forward', 470, 497, true);
 	add_image_size('clients-icon', 170, 170, true);
+	add_image_size('contact-img', 566, 621, true);
 }
 add_action( 'after_setup_theme', 'fichi_img_size_setup' );
 
@@ -285,3 +291,8 @@ add_filter('get_the_archive_title', function ($title) {
 	}
 	return $title;
 });
+
+function my_acf_init() {
+	acf_update_setting('google_api_key', 'AIzaSyDh5MkGZQcCxjMq8WIzDo6J9yhaPQFBtAQ');
+}
+add_action('acf/init', 'my_acf_init');

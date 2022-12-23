@@ -65,6 +65,11 @@ get_header();
             <!--	Big Clients-->
 			<?php get_template_part('inc/flexible-sections/big-clients'); ?>
 		<?php endif; ?>
+
+        <?php if ( get_row_layout() == 'contact_us' ): ?>
+            <!--	Contact Us-->
+			<?php get_template_part('inc/flexible-sections/contact-us'); ?>
+		<?php endif; ?>
 	<?php endwhile; ?>
 <?php endif; ?>
 
