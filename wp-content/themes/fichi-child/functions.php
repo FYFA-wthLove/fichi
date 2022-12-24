@@ -41,7 +41,7 @@ function theme_enqueue_styles() {
 	$fichi_scripts = "/js/theme{$suffix}.js";
 
 	wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . $theme_styles, array(), $the_theme->get( 'Version' ) );
-//	wp_enqueue_style( 'fichi-styles', get_stylesheet_directory_uri() . $fichi_style, array(), $the_theme->get( 'Version' ) );
+	wp_enqueue_style( 'fichi-styles', get_stylesheet_directory_uri() . $fichi_style_min, array(), $the_theme->get( 'Version' ) );
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . $theme_scripts, array(), $the_theme->get( 'Version' ), true );
 	wp_enqueue_script( 'fichi-scripts', get_stylesheet_directory_uri() . $fichi_scripts, array(), $the_theme->get( 'Version' ), true );
