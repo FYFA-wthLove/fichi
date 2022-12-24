@@ -18,7 +18,7 @@
 				<?php endif; ?>
 
 				<?php if( $who_title = get_sub_field('who_title') ): ?>
-					<div class="who-we-are__title text-lg-start text-center">
+					<div class="who-we-are__title text-lg-start text-center pb-3">
 						<h2 class="mb-0"><?php echo $who_title ?></h2>
 					</div>
 				<?php endif; ?>

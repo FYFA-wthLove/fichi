@@ -37,7 +37,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
                 <div class="footer__menu">
                     <div class="text-lg-start text-center">
-                        <h4 class="mb-4 lh-16"><?php echo __( 'Link', 'fichi-child' ); ?></h4>
+                        <h4 class="pb-2 lh-16 mb-0"><?php echo __( 'Link', 'fichi-child' ); ?></h4>
                     </div>
 		            <?php wp_nav_menu( array(
 			            'theme_location' => 'primary',
@@ -50,16 +50,18 @@ $container = get_theme_mod( 'understrap_container_type' );
             <div class="col-xxl-6 col-md-9">
                 <div class="d-flex justify-content-lg-between justify-content-md-evenly justify-content-around flex-sm-row flex-column">
                     <div class="text-sm-start text-center">
-                        <h4 class="mb-5 lh-16 text-dark"><?php echo __('Stay Connected', 'fichi-child'); ?></h4>
+                        <div class="pb-2">
+                            <h4 class="pb-1 mb-0 lh-16 text-dark"><?php echo __('Stay Connected', 'fichi-child'); ?></h4>
+                        </div>
 
                         <?php if( $footer_email = get_field('footer_email', 'option') ): ?>
-                            <div class="footer__email mb-4">
+                            <div class="footer__email pb-2">
                                 <a class="text-purple h3 text-decoration-underline" href="mailto:<?php echo $footer_email ?>"><?php echo $footer_email; ?></a>
                             </div>
                         <?php endif; ?>
 
                         <?php if( $footer_address = get_field('footer_address', 'option') ): ?>
-                            <div class="footer__address mb-2">
+                            <div class="footer__address pb-1">
                                 <p class="text-dark mb-0"><?php echo $footer_address; ?></p>
                             </div>
                         <?php endif; ?>

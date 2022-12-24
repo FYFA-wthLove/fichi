@@ -9,7 +9,7 @@
                 <?php endif; ?>
 
                 <?php if( $big_clients_title = get_sub_field('big_clients_title') ): ?>
-                    <div class="big-clients__title">
+                    <div class="big-clients__title pb-4">
                         <?php echo $big_clients_title; ?>
                     </div>
                 <?php endif; ?>
@@ -17,11 +17,11 @@
         </div>
 
 	    <?php if ( have_rows( 'big_clients_icons_list') ): ?>
-            <div class="row pt-3 justify-content-center">
+            <div class="row pt-2 justify-content-center">
 			    <?php while ( have_rows( 'big_clients_icons_list' ) ): the_row(); ?>
-                    <div class="col-xxl-2 col-lg-3 col-sm-4 col-6 pb-2 d-flex justify-content-center">
+                    <div class="col-xxl-2 col-lg-3 col-sm-4 col-6 pb-1 d-flex justify-content-center">
 					    <?php if( $icon = get_sub_field('icon') ): ?>
-                            <div class="big-clients__list-icon d-flex flex-column justify-content-center align-items-center">
+                            <div class="big-clients__list-icon border-1 d-flex flex-column justify-content-center align-items-center">
 							    <?php echo wp_get_attachment_image( $icon, 'full' ); ?>
                             </div>
 					    <?php endif; ?>
@@ -31,7 +31,7 @@
 	    <?php endif; ?>
 
         <div class="row">
-            <div class="big-clients__drawing text-center pt-2">
+            <div class="big-clients__drawing text-center pt-1">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/clients_drawing.webp" alt="">
             </div>
 
@@ -54,8 +54,8 @@
 		                $link_title = $big_clients_first_button['title'];
 		                $link_target = $big_clients_first_button['target'] ? $big_clients_first_button['target'] : '_self';
 		                ?>
-                        <div class="big-clients__buttons__item d-flex">
-                            <a class="btn-purple w-100 align-items-center text-center w-100" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
+                        <div class="big-clients__buttons__item btn-purple">
+                            <a class="w-100 align-items-center text-center w-100" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
 				                <?php echo esc_html( $link_title ); ?>
                             </a>
                         </div>
@@ -66,8 +66,8 @@
 		                $link_title = $big_clients_second_button['title'];
 		                $link_target = $big_clients_second_button['target'] ? $big_clients_second_button['target'] : '_self';
 		                ?>
-                        <div class="big-clients__buttons__item d-flex">
-                            <a class="btn-green w-100 align-items-center text-center w-100" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
+                        <div class="big-clients__buttons__item btn-green d-flex">
+                            <a class="w-100 align-items-center text-center w-100" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
 				                <?php echo esc_html( $link_title ); ?>
                             </a>
                         </div>

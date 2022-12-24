@@ -1,17 +1,12 @@
 .consulting-firm {
-	padding-top: 31px;
 	padding-bottom: 50px;
 
 	@include media-breakpoint-down(lg) {
-		padding-top: 30px;
 		padding-bottom: 30px;
 	}
 
 	&__description {
-		padding-bottom: 41px;
 		p {
-			line-height: 22px;
-			letter-spacing: -0.16px;
 			margin-bottom: 0;
 		}
 	}
@@ -21,7 +16,6 @@
 			max-width: 167px;
 			p {
 				line-height: 18px;
-				letter-spacing: -0.14px;
 			}
 		}
 

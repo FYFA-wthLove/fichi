@@ -9,8 +9,8 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<div class="work__list-item position-relative overflow-hidden d-flex align-items-center" style="background-color:<?php the_field('work_card_bg'); ?>">
-    <div class="container h-100 py-5">
+<div class="work__list-item position-relative overflow-hidden d-flex align-items-center " style="background-color:<?php the_field('work_card_bg'); ?>">
+    <div class="container h-100 py-3">
         <div class="row h-100 flex-column justify-content-center text-md-start text-center">
             <div class="col-xxl-4 col-lg-5 col-md-6 col-12">
 				<?php $args = array(
@@ -35,8 +35,8 @@ defined( 'ABSPATH' ) || exit;
                     <?php the_content(); ?>
                 </div>
 
-                <div class="work__list-item__btn">
-                    <a class="btn-purple" href="<?php the_permalink(); ?>"><?php echo __('View Project', 'fichi-child'); ?></a>
+                <div class="work__list-item__btn btn-purple">
+                    <a href="<?php the_permalink(); ?>"><?php echo __('View Project', 'fichi-child'); ?></a>
                 </div>
             </div>
         </div>

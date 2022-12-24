@@ -77,8 +77,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 		$link_title = $header_button['title'];
 		$link_target = $header_button['target'] ? $header_button['target'] : '_self';
 		?>
-        <div class="navbar__btn position-absolute">
-            <a class="btn-green d-lg-inline d-flex" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
+        <div class="navbar__btn btn-green position-absolute">
+            <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
                 <span class="desktop"><?php echo esc_html( $link_title ); ?></span>
                 <img class="d-lg-none d-block" src="<?php echo get_stylesheet_directory_uri();?>/assets/img/get-start.svg" alt="">
             </a>

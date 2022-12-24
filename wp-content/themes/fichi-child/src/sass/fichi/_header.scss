@@ -81,8 +81,6 @@ body {
 				a {
 					color: $dark;
 					font-weight: 700;
-					line-height: normal;
-					letter-spacing: -0.16px;
 					padding: 0;
 					transition: all .4s;
 
@@ -246,6 +244,11 @@ body {
 
 		&__btn {
 			right: $side-header-indents;
+			max-width: 140px !important;
+
+			@include media-breakpoint-down(lg) {
+				width: auto;
+			}
 
 			a {
 				@include media-breakpoint-down(lg) {

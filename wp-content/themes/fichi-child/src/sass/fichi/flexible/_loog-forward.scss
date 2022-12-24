@@ -29,23 +29,16 @@
 	}
 
 	&__description {
-		padding-top: 30px;
 		padding-bottom: 45px;
-
-		p {
-			line-height: 22px;
-			letter-spacing: -0.16px;
-		}
 	}
-
-	&__button {
-		a {
-			padding: 16px 47px;
-		}
-	}
+	//
+	//&__button {
+	//	a {
+	//		padding: 16px 47px;
+	//	}
+	//}
 
 	&__drawing {
-		padding-right: 30px;
 		margin-top: -18px;
 
 		@include media-breakpoint-down(xxl) {
@@ -58,11 +51,6 @@
 
 		@include media-breakpoint-down(lg) {
 			padding-left: 15px;
-		}
-
-		p {
-			line-height: 22px;
-			letter-spacing: -0.16px;
 		}
 	}
 }

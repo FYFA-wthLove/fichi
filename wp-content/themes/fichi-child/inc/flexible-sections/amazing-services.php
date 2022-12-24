@@ -1,4 +1,4 @@
-<section class="amazing-services">
+<section class="amazing-services pb-3">
 	<div class="amazing-services__block1" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/bolls.svg)">
         <div class="container">
             <div class="row justify-content-between position-relative">

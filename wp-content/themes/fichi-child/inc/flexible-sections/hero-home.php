@@ -1,6 +1,6 @@
 <section class="hero-home position-relative">
 	<div class="container">
-		<div class="row align-items-center mb-10">
+		<div class="row align-items-center mb-big">
 			<div class="col-xxl-4 col-xl-5 col-lg-6 col-12 index-1">
 				<?php if( $hero_home_title = get_sub_field('hero_home_title') ): ?>
 					<div class="hero-home__title text-lg-start text-center">
@@ -20,8 +20,8 @@
 						$link_title = $hero_home_first_btn['title'];
 						$link_target = $hero_home_first_btn['target'] ? $hero_home_first_btn['target'] : '_self';
 						?>
-						<div class="">
-							<a class="btn-purple" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
+						<div class="hero-home__buttons__item btn-purple">
+							<a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
 								<?php echo esc_html( $link_title ); ?>
 							</a>
 						</div>
@@ -32,8 +32,8 @@
 						$link_title = $hero_home_second_btn['title'];
 						$link_target = $hero_home_second_btn['target'] ? $hero_home_second_btn['target'] : '_self';
 						?>
-						<div class="">
-							<a class="btn-green" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
+						<div class="hero-home__buttons__item btn-green">
+							<a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
 								<?php echo esc_html( $link_title ); ?>
 							</a>
 						</div>
