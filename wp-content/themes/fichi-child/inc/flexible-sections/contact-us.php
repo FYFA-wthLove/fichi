@@ -27,7 +27,7 @@
                 <?php endif; ?>
 
                 <?php if( $contact_us_phone = get_sub_field('contact_us_phone') ): ?>
-                    <div class="contact-us__phone text-lg-start text-center">
+                    <div class="contact-us__phone text-lg-start text-center pt-1">
                         <a class="text-dark" href="tel:<?php echo $contact_us_phone; ?>"><?php echo $contact_us_phone ?></a>
                     </div>
                 <?php endif; ?>
@@ -44,7 +44,7 @@
     </div>
 
     <?php if( $contact_us_map = get_sub_field('contact_us_map') ): ?>
-        <div class="acf-map" data-zoom="16">
+        <div class="acf-map w-100 border-0" data-zoom="16">
             <div class="marker" data-lat="<?php echo esc_attr($contact_us_map['lat']); ?>" data-lng="<?php echo esc_attr($contact_us_map['lng']); ?>"></div>
         </div>
     <?php endif; ?>

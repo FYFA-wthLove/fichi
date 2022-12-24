@@ -1,4 +1,4 @@
-<section class="consulting-firm">
+<section class="consulting-firm pt-3">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-12">
@@ -11,7 +11,7 @@
 
             <div class="col-lg-6 col-12">
                 <?php if( $consulting_firm_description = get_sub_field('consulting_firm_description') ): ?>
-                    <div class="consulting-firm__description text-lg-start text-center">
+                    <div class="consulting-firm__description text-lg-start text-center pb-4">
                         <?php echo $consulting_firm_description; ?>
                     </div>
                 <?php endif; ?>

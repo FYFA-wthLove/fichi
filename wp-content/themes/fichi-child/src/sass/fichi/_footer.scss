@@ -1,6 +1,5 @@
 .footer {
 	border-radius: 50px;
-	margin-bottom: 30px;
 	padding: 160px 20px;
 	z-index: 1;
 
@@ -13,14 +12,9 @@
 	}
 
 	&__copyright {
+		margin-top: 23px;
 		@include media-breakpoint-down(xxl) {
 			margin-bottom: 30px;
-		}
-
-		p {
-			line-height: 26.4px;
-			letter-spacing: -0.14px;
-			margin-top: 18px;
 		}
 	}
 
@@ -44,7 +38,6 @@
 
 				a {
 					color: $purple;
-					letter-spacing: -0.16px;
 				}
 			}
 		}
@@ -57,18 +50,8 @@
 		}
 	}
 
-	&__address {
-		p {
-			line-height: 24px;
-			letter-spacing: -0.16px;
-		}
-	}
-
 	&__phone {
-		a {
-			line-height: 26.4px;
-			letter-spacing: -0.16px;
-		}
+		padding-top: 5px;
 	}
 
 	&__socials {

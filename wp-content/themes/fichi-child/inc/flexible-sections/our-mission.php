@@ -19,7 +19,7 @@
 	    <?php if ( have_rows( 'mission_cards') ): ?>
             <div class="row justify-content-center">
 	            <?php while ( have_rows( 'mission_cards' ) ): the_row(); ?>
-                    <div class="col-lg-4 col-md-6 col-12 mb-lg-0 mb-5">
+                    <div class="col-lg-4 col-md-6 col-12">
                         <div class="our-mission__card d-flex flex-column justify-content-between h-100 text-lg-start text-center">
                             <div>
                             <?php if( $card_icon = get_sub_field('card_icon') ): ?>
@@ -46,8 +46,8 @@
 		                        $link_title = $card_button['title'];
 		                        $link_target = $card_button['target'] ? $card_button['target'] : '_self';
 		                        ?>
-                                <div class="our-mission__card__button">
-                                    <a class="btn-green" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
+                                <div class="our-mission__card__button btn-green">
+                                    <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
 				                        <?php echo esc_html( $link_title ); ?>
                                     </a>
                                 </div>

@@ -7,7 +7,8 @@
 	}
 
 	&__list-icon {
-		border: 1px solid #f6e7da;
+		border-style: solid;
+		border-color: $footer-bg;
 		min-width: 170px;
 		min-height: 170px;
 		border-radius: 50px;
@@ -18,15 +19,8 @@
 		}
 	}
 
-	&__description {
-		line-height: 24px;
-		letter-spacing: -0.18px;
-		font-weight: 400;
-	}
-
 	&__title {
 		padding-top: 18px;
-		padding-bottom: 40px;
 
 		span {
 			position: relative;
@@ -45,8 +39,7 @@
 	}
 
 	&__second-title {
-		padding-top: 57px;
-		padding-bottom: 30px;
+		padding: 57px 0 30px 0;
 
 		@include media-breakpoint-down(lg) {
 			padding: 15px 0;

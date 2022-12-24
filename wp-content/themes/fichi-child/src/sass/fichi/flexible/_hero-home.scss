@@ -1,5 +1,5 @@
 .hero-home {
-	padding-top: 159px;
+	padding-top: 155px;
 
 	@include media-breakpoint-down(xl) {
 		padding-top: 80px;
@@ -11,7 +11,7 @@
 	}
 
 	&__title {
-		margin-bottom: 27px;
+		margin-bottom: 30px;
 
 		@include media-breakpoint-down(lg) {
 			margin-bottom: 25px;
@@ -24,20 +24,18 @@
 		@include media-breakpoint-down(lg) {
 			margin-bottom: 25px;
 		}
-
-		p {
-			line-height: 24px;
-			letter-spacing: -0.18px;
-		}
 	}
 
 	&__buttons {
 		gap: 30px;
+
+		&__item {
+		}
 	}
 
 	&__image {
 		position: absolute;
-		top: -336px;
+		top: -340px;
 		right: 181px;
 
 		@media (max-width: 1780px) {

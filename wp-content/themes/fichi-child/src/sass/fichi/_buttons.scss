@@ -1,27 +1,67 @@
 .btn-green {
-	line-height: 48px;
-	letter-spacing: -0.16px;
-	padding: 16px 36px;
-	border-radius: 19px;
-	background-color: $green;
-	transition: all .4s;
+	max-width: 160px;
+	width: 100%;
+	color: transparent;
+	background-color: transparent;
+	border-color: transparent;
 
-	&:hover {
-		background-color: $purple;
-		color: $light;
+	@include media-breakpoint-down(lg) {
+		margin: 0 auto;
+	}
+
+	 &:hover {
+		 color: transparent;
+		 background-color: transparent;
+		 border-color: transparent;
+	 }
+
+	a {
+		display: block;
+		text-align: center;
+		line-height: 48px;
+		letter-spacing: -0.16px;
+		border-radius: 19px;
+		background-color: $green;
+		transition: all .4s;
+		color: $black;
+
+		&:hover {
+			background-color: $purple;
+			color: $light;
+		}
 	}
 }
 
 .btn-purple {
-	line-height: 48px;
-	letter-spacing: -0.16px;
-	padding: 16px 36px;
-	border-radius: 19px;
-	background-color: $purple;
-	transition: all .4s;
+	max-width: 160px;
+	width: 100%;
+	color: transparent;
+	background-color: transparent;
+	border-color: transparent;
+
+	@include media-breakpoint-down(lg) {
+		margin: 0 auto;
+	}
 
 	&:hover {
-		background-color: $green;
-		color: $dark;
+		color: transparent;
+		background-color: transparent;
+		border-color: transparent;
+	}
+
+	a {
+		display: block;
+		text-align: center;
+		line-height: 48px;
+		letter-spacing: -0.16px;
+		border-radius: 19px;
+		background-color: $purple;
+		transition: all .4s;
+		color: $light;
+
+		&:hover {
+			background-color: $green;
+			color: $dark;
+		}
 	}
 }
