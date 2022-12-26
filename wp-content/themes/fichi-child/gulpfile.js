@@ -1,45 +1,94 @@
 var gulp   = require('gulp'),
     sass   = require('gulp-sass')(require('sass')),
-    concat = require('gulp-concat'),
-    minify = require('gulp-minify'),
-    cssmin = require('gulp-minify-css'),
     plumber = require('gulp-plumber'),
+    sourcemaps = require("gulp-sourcemaps"),
+    autoprefixer = require('gulp-autoprefixer'),
     rename = require("gulp-rename"),
-    jshint = require('gulp-jshint'),
-    uglify = require('gulp-uglify');
+    cleanCSS = require('gulp-clean-css'),
+    webserver = require('browser-sync'),
+    rigger = require('gulp-rigger'),
+    uglify = require('gulp-uglify'),
+    cache = require('gulp-cache'),
+    rimraf = require('gulp-rimraf');
 
-gulp.task('build-css', function() {
-    return gulp.src('./src/sass/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(concat('fichi.css'))
-        .pipe(gulp.dest('css/'));
+var path = {
+    build: {
+        js: 'assets/build/js/',
+        css: 'assets/build/css/',
+    },
+    src: {
+        js: 'src/js/fichi/*.js',
+        style: 'src/sass/*.scss',
+    },
+    watch: {
+        js: 'src/js/fichi/**/*.js',
+        css: 'src/sass/**/*.scss',
+    },
+    clean: './assets/build/*'
+};
+
+var config = {
+    server: {
+        baseDir: './assets/build'
+    },
+    notify: false
+};
+
+gulp.task('webserver', function () {
+    webserver(config);
 });
 
-gulp.task('cssmin', function () {
-    return gulp.src('./css/fichi.css')
+gulp.task('css:build', function () {
+    return gulp.src(path.src.style)
         .pipe(plumber())
-        .pipe(cssmin())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('css/min'));
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+        .pipe(autoprefixer())
+        .pipe(gulp.dest(path.build.css))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(cleanCSS())
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest(path.build.css))
+        .pipe(webserver.reload({ stream: true }));
 });
 
-gulp.task('compress-js', function() {
-    gulp.src('./src/js/fichi/*.js')
-        .pipe(jshint.reporter('fail'))
-        .pipe(concat('theme.js'))
-        .pipe(gulp.dest('js'))
-        .pipe(rename('theme.min.js'))
+gulp.task('js:build', function () {
+    return gulp.src(path.src.js)
+        .pipe(plumber())
+        .pipe(rigger())
+        .pipe(gulp.dest(path.build.js))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(sourcemaps.init())
         .pipe(uglify())
-        .pipe(gulp.dest('js'));
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest(path.build.js))
+        .pipe(webserver.reload({ stream: true }));
 });
 
-gulp.task('watch', function() {
-    gulp.watch('./src/sass/**/*.scss', gulp.parallel('build-css'));
-    gulp.watch('./css/*.css', gulp.parallel('cssmin'));
+gulp.task('cache:clear', function () {
+    cache.clearAll();
 });
 
-gulp.task('jsmin', function () {
-    gulp.watch('./src/js/fichi/*.js', gulp.parallel('compress-js'));
+gulp.task('clean:build', function () {
+    return gulp.src(path.clean, { read: false })
+        .pipe(rimraf());
 });
 
-gulp.task('default', gulp.parallel('watch', 'jsmin'));
+gulp.task('build',
+    gulp.series('clean:build',
+        gulp.parallel(
+            'css:build',
+            'js:build',
+        )
+    )
+);
+
+gulp.task('watch', function () {
+    gulp.watch(path.watch.css, gulp.series('css:build'));
+    gulp.watch(path.watch.js, gulp.series('js:build'));
+});
+
+gulp.task('default', gulp.series(
+    'build',
+    gulp.parallel('webserver','watch')
+));

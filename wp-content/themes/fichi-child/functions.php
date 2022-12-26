@@ -36,15 +36,17 @@ function theme_enqueue_styles() {
 	// Grab asset urls.
 	$theme_styles  = "/css/child-theme{$suffix}.css";
 	$theme_scripts = "/js/child-theme{$suffix}.js";
-	$fichi_style_min = "/css/min/fichi{$suffix}.css";
-	$fichi_style = "/css/fichi.css";
-	$fichi_scripts = "/js/theme{$suffix}.js";
 
-	wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . $theme_styles, array(), $the_theme->get( 'Version' ) );
+	$fichi_style = "/assets/build/css/child-theme.css";
+	$fichi_scripts = "/assets/build/js/header.js";
+	$fichi_style_min = "/assets/build/css/child-theme{$suffix}.css";
+	$fichi_scripts_min = "/assets/build/js/header{$suffix}.js";
+
+//	wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . $theme_styles, array(), $the_theme->get( 'Version' ) );
 	wp_enqueue_style( 'fichi-styles', get_stylesheet_directory_uri() . $fichi_style_min, array(), $the_theme->get( 'Version' ) );
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . $theme_scripts, array(), $the_theme->get( 'Version' ), true );
-	wp_enqueue_script( 'fichi-scripts', get_stylesheet_directory_uri() . $fichi_scripts, array(), $the_theme->get( 'Version' ), true );
+	wp_enqueue_script( 'fichi-scripts', get_stylesheet_directory_uri() . $fichi_scripts_min, array(), $the_theme->get( 'Version' ), true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
