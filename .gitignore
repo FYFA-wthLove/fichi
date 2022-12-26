@@ -28,9 +28,18 @@ wp-config.php
 .idea/php.xml
 
 .idea/deployment.xml
+#Understrap
 wp-content/themes/fichi-child/css/**/*.css
 wp-content/themes/fichi-child/css/**/*.min.css
 wp-content/themes/fichi-child/js/**/*.js
 wp-content/themes/fichi-child/js/**/*.min.js
 wp-content/themes/fichi-child/js/**/*.js.map
 wp-content/themes/fichi-child/js/**/*.min.js.map
+#Gulp
+wp-content/themes/fichi-child/assets/build/css/**/*.css
+wp-content/themes/fichi-child/assets/build/css/**/*min.css
+wp-content/themes/fichi-child/assets/build/css/**/*min.css.map
+wp-content/themes/fichi-child/assets/build/js/**/*.js
+wp-content/themes/fichi-child/assets/build/js/**/*min.js
+wp-content/themes/fichi-child/assets/build/js/**/*min.js.map
+
